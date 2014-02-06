@@ -1,8 +1,8 @@
-[submodule "forge-core"]
-	path = forge-core
-	url = git@github.com:forge/core.git
-	branch = master
 [submodule "furnace"]
 	path = furnace
 	url = git@github.com:forge/furnace.git
+	branch = master
+[submodule "forge-core"]
+	path = forge-core
+	url = git@github.com:forge/core.git
 	branch = master
