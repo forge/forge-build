@@ -6,3 +6,11 @@
 	path = forge-core
 	url = git@github.com:forge/core.git
 	branch = master
+[submodule "furnace-cdi"]
+	path = furnace-cdi
+	url = git@github.com:forge/furnace-cdi.git
+	branch = master
+[submodule "furnace-simple"]
+	path = furnace-simple
+	url = git@github.com:forge/furnace-simple.git
+	branch = master

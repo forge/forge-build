@@ -51,6 +51,8 @@
 
    <modules>
       <module>furnace</module>
+      <module>furnace-cdi</module>
+      <module>furnace-simple</module>
       <module>forge-core</module>
    </modules>
 
