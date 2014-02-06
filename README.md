@@ -1,7 +1,7 @@
 forge-build
 ===========
 
-Used to release Furnace and Forge projects
+Used to release Furnace and Forge projects. This project requires Git 1.8.2+ for the remote submodule update feature to work.
 
 To clone this project:
 
