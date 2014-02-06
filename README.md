@@ -10,20 +10,20 @@ To clone this project:
 
 To release Furnace and Forge together:
 
-    git submodule update --remote && git commit -m "Updated submodules"
+    git submodule update --remote && git commit -a -m "Updated submodules"
     mvn clean release:prepare release:perform -DdevelopmentVersion=DEV_VERSION -Dtag=REL_VERSION -DreleaseVersion=REL_VERSION
 
 
 
 To release only Furnace:
 
-    git submodule update --remote && git commit -m "Updated submodules"
+    git submodule update --remote && git commit -a -m "Updated submodules"
     mvn clean release:prepare release:perform -Pfurnace -DdevelopmentVersion=DEV_VERSION -Dtag=REL_VERSION -DreleaseVersion=REL_VERSION 
 
 
 To release only Forge:
 
-    git submodule update --remote && git commit -m "Updated submodules"
+    git submodule update --remote && git commit -a -m "Updated submodules"
     mvn clean release:prepare release:perform -Pforge -DdevelopmentVersion=DEV_VERSION -Dtag=REL_VERSION -DreleaseVersion=REL_VERSION
 
 
