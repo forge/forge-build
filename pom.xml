@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>org.jboss</groupId>
+      <artifactId>jboss-parent</artifactId>
+      <version>12</version>
+   </parent>
+
+   <groupId>org.jboss.forge</groupId>
+   <artifactId>forge-build</artifactId>
+   <version>2.0.1-SNAPSHOT</version>
+   <packaging>pom</packaging>
+
+   <name>Forge - Build</name>
+   <description>Builds Furnace and Forge projects</description>
+
+   <licenses>
+      <license>
+         <name>Eclipse Public License version 1.0</name>
+         <url>http://www.eclipse.org/legal/epl-v10.html</url>
+      </license>
+   </licenses>
+
+   <developers>
+      <developer>
+         <id>lincoln</id>
+         <name>Lincoln Baxter, III</name>
+         <email>lincolnbaxter@gmail.com</email>
+      </developer>
+      <developer>
+         <id>gastaldi</id>
+         <name>George Gastaldi</name>
+         <email>gegastaldi@gmail.com</email>
+      </developer>
+      <developer>
+         <id>koen</id>
+         <name>Koen Aers</name>
+         <email>koen.aers@gmail.com</email>
+      </developer>
+      <developer>
+         <id>stale</id>
+         <name>Stale Pedersen</name>
+         <email>stalep@gmail.com</email>
+      </developer>
+   </developers>
+
+   <prerequisites>
+      <maven>3.0</maven>
+   </prerequisites>
+
+   <modules>
+      <module>furnace</module>
+      <module>forge-core</module>
+   </modules>
+
+   <profiles>
+      <profile>
+         <id>teamcity</id>
+         <activation>
+            <property>
+               <name>teamcity.maven.userSettings.path</name>
+               <value>!false</value>
+            </property>
+         </activation>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-surefire-plugin</artifactId>
+                  <inherited>true</inherited>
+                  <configuration>
+                     <systemPropertyVariables>
+                        <org.apache.maven.user-settings>
+                           ${teamcity.maven.userSettings.path}
+                        </org.apache.maven.user-settings>
+                     </systemPropertyVariables>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+   </profiles>
+</project>
+
